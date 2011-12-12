@@ -10,3 +10,6 @@
 [submodule "bundle/vim-align"]
 	path = bundle/vim-align
 	url = https://github.com/tsaleh/vim-align
+[submodule "bundle/gist-vim"]
+	path = bundle/gist-vim
+	url = http://github.com/mattn/gist-vim
