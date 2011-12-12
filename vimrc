@@ -17,6 +17,12 @@ set incsearch
 set ignorecase
 set smartcase
 
+set visualbell
+
 call pathogen#infect()
 
 let g:CommandTMaxHeight=20
+
+" Full screen to max width and height.
+set fuoptions=maxhorz,maxvert
+
