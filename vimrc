@@ -14,3 +14,5 @@ set ignorecase
 set smartcase
 
 call pathogen#infect()
+
+let g:CommandTMaxHeight=20
