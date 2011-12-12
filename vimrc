@@ -26,5 +26,9 @@ let g:CommandTMaxHeight=20
 " Full screen to max width and height.
 set fuoptions=maxhorz,maxvert
 
+" Trim trailing whitespace
 autocmd BufWritePre *.rb,*.js,*.erb :%s/\s\+$//e
+
+" Highlight trailing whitespace
+set list listchars=tab:»·,trail:·"
 
