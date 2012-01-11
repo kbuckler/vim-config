@@ -23,12 +23,17 @@ call pathogen#infect()
 
 let g:CommandTMaxHeight=20
 
-" Full screen to max width and height.
-set fuoptions=maxhorz,maxvert
-
 " Trim trailing whitespace
 autocmd BufWritePre *.rb,*.js,*.erb :%s/\s\+$//e
 
 " Highlight trailing whitespace
 set list listchars=tab:»·,trail:·"
 
+" Show line numbers
+set number
+
+" Show status line
+set laststatus=2
+
+" zsh ftw
+set shell=zsh
