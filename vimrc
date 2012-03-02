@@ -24,7 +24,7 @@ call pathogen#infect()
 let g:CommandTMaxHeight=20
 
 " Trim trailing whitespace
-autocmd BufWritePre *.rb,*.js,*.erb :%s/\s\+$//e
+autocmd BufWritePre *.rb,*.js,*.erb,*.scss :%s/\s\+$//e
 
 " Highlight trailing whitespace
 set list listchars=tab:»·,trail:·"
@@ -37,3 +37,14 @@ set laststatus=2
 
 " zsh ftw
 set shell=zsh
+
+" alias W an E to w and e, respectively
+cnoreabbrev W w
+cnoreabbrev E e
+
+# Hide scrollbars
+set guioptions=-l
+set guioptions=-L
+set guioptions=-r
+set guioptions=-R
+
