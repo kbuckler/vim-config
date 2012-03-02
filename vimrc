@@ -41,10 +41,3 @@ set shell=zsh
 " alias W an E to w and e, respectively
 cnoreabbrev W w
 cnoreabbrev E e
-
-# Hide scrollbars
-set guioptions=-l
-set guioptions=-L
-set guioptions=-r
-set guioptions=-R
-
