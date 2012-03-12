@@ -41,3 +41,10 @@ set shell=zsh
 " alias W an E to w and e, respectively
 cnoreabbrev W w
 cnoreabbrev E e
+
+" Zendesk shortcuts
+command Zendesk cd ~/code/zendesk
+
+" Save/load window state
+au BufWinLeave ?* mkview
+au BufWinEnter ?* silent loadview
