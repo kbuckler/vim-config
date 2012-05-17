@@ -48,3 +48,11 @@ command Zendesk cd ~/code/zendesk
 " Save/load window state
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
+
+" Solarized 
+let g:solarized_termcolors=256
+set background=light
+colorscheme solarized
+
+" Git status
+" set statusline+=%{fugitive#statusline()}  
