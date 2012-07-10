@@ -3,6 +3,8 @@ syntax enable
 set encoding=utf-8
 set showcmd
 
+call pathogen#infect()
+
 filetype on
 filetype indent on
 filetype plugin on
@@ -19,12 +21,13 @@ set smartcase
 
 set visualbell
 
-call pathogen#infect()
-
 let g:CommandTMaxHeight=20
 
 " Trim trailing whitespace
 autocmd BufWritePre *.rb,*.js,*.erb,*.scss :%s/\s\+$//e
+
+" Swap tabs for spaces
+autocmd BufWritePre *.rb,*.js,*.erb,*.scss :%s/\t/  /e
 
 " Highlight trailing whitespace
 set list listchars=tab:»·,trail:·"
@@ -49,10 +52,17 @@ command Zendesk cd ~/code/zendesk
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
 
-" Solarized 
-let g:solarized_termcolors=256
-set background=light
-colorscheme solarized
+if has("gui_running")
+  " Solarized 
+  let g:solarized_termcolors=256
+  set background=light
+  colorscheme solarized
 
-" Git status
-" set statusline+=%{fugitive#statusline()}  
+  " Powerline
+  let g:Powerline_symbols = 'fancy'
+  set guifont=Menlo\ Regular\ for\ Powerline:h11
+
+  " zsh causes hangs in Lion 
+  " http://code.google.com/p/macvim/issues/detail?id=346
+  set sh=/bin/sh
+endif
