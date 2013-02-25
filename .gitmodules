@@ -43,3 +43,9 @@
 [submodule "bundle/vim-colors-soloarized"]
 	path = bundle/vim-colors-soloarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule "bundle/vim-commentary"]
+	path = bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "bundle/vim-handlebars"]
+	path = bundle/vim-handlebars
+	url = https://github.com/nono/vim-handlebars.git
