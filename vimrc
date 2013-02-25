@@ -49,20 +49,6 @@ set shell=zsh\ --login
 cnoreabbrev W w
 cnoreabbrev E e
 
-" Zendesk shortcuts
-function! SetupZendeskClassic()
-  execute "!cd ~/code/zendesk"
-  colorscheme wombat256mod
-endfunction
-command Zendesk call SetupZendeskClassic()
-
-" Lotus Shortcuts
-function! SetupLotus()
-  execute "!cd ~/code/zendesk_console"
-  colorscheme darkblue
-endfunction
-command Lotus call SetupLotus()
-
 " Save/load window state
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
@@ -71,7 +57,7 @@ if has("gui_running")
   " Solarized 
   let g:solarized_termcolors=256
   set background=dark
-  colorscheme solarized
+  colorscheme vividchalk
 
   " Powerline
   let g:Powerline_symbols = 'fancy'
