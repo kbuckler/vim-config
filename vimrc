@@ -50,13 +50,20 @@ cnoreabbrev W w
 cnoreabbrev E e
 
 " Save/load window state
-au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview
+" au BufWinLeave ?* mkview
+" au BufWinEnter ?* silent loadview
+
+" Quickfix list
+nnoremap ]q :cnext<cr>
+nnoremap [q :cprevious<cr>
+
+" Open the quickfix window after grep
+autocmd QuickFixCmdPost *grep* cwindow
 
 if has("gui_running")
   " Solarized 
-  let g:solarized_termcolors=256
-  set background=dark
+  " set background=dark
+  
   colorscheme vividchalk
 
   " Powerline
@@ -71,3 +78,5 @@ endif
 "let $XIKI_DIR = "/Users/kbuckler/code/xiki"
 "source /Users/kbuckler/code/xiki/etc/vim/xiki.vim
 
+" gitgutter
+highlight clear SignColumn
