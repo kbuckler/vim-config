@@ -25,15 +25,18 @@ set smartcase
 
 set visualbell
 
-let g:ctrlp_by_filename = 1
-
 " Trim trailing whitespace
 autocmd BufWritePre *.rb,*.js,*.erb,*.scss :%s/\s\+$//e
 
 " Swap tabs for spaces
 autocmd BufWritePre *.rb,*.js,*.erb,*.scss :%s/\t/  /e
 
-" Highlight trailing whitespace
+" 80 col
+highlight EightyColumnPlus guibg=black
+match EightyColumnPlus '\%>80v.\+'
+autocmd ColorScheme * highlight EightyColumnPlus guibg=black
+
+" Highlight whitespace
 set list listchars=tab:»·,trail:·"
 
 " Show line numbers
@@ -60,11 +63,20 @@ nnoremap [q :cprevious<cr>
 " Open the quickfix window after grep
 autocmd QuickFixCmdPost *grep* cwindow
 
+"let $XIKI_DIR = "/Users/kbuckler/code/xiki"
+"source /Users/kbuckler/code/xiki/etc/vim/xiki.vim
+
+" gitgutter
+highlight clear SignColumn
+
+" vim-dispatch
+autocmd FileType ruby let b:dispatch = 'bundle exec testrb %'
+
 if has("gui_running")
   " Solarized 
   " set background=dark
   
-  colorscheme vividchalk
+  colorscheme wombat256mod
 
   " Powerline
   let g:Powerline_symbols = 'fancy'
@@ -74,9 +86,3 @@ if has("gui_running")
   " http://code.google.com/p/macvim/issues/detail?id=346
   set sh=/bin/sh
 endif
-
-"let $XIKI_DIR = "/Users/kbuckler/code/xiki"
-"source /Users/kbuckler/code/xiki/etc/vim/xiki.vim
-
-" gitgutter
-highlight clear SignColumn
