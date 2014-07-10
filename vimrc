@@ -73,16 +73,16 @@ highlight clear SignColumn
 autocmd FileType ruby let b:dispatch = 'bundle exec testrb %'
 
 if has("gui_running")
-  " Solarized 
-  " set background=dark
-  
+  set noantialias 
   colorscheme wombat256mod
 
   " Powerline
   let g:Powerline_symbols = 'fancy'
-  set guifont=Menlo\ Regular\ for\ Powerline:h11
+  set guifont=Monaco\ for\ Powerline
 
   " zsh causes hangs in Lion 
   " http://code.google.com/p/macvim/issues/detail?id=346
   set sh=/bin/sh
 endif
+
+runtime! plugin/sensible.vim
